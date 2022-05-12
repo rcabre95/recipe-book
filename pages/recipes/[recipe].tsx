@@ -4,7 +4,7 @@ import styles from '../../styles/Recipe.module.scss'
 
 export async function getStaticPaths() {
     const client = createClient({
-        space: "pt9po23extw1",
+        space: `${process.env.NEXT_PUBLIC_SPACE_ID}`,
         accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_KEY}`,
     });
 
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
     const { params } = context
     const client = createClient({
-        space: "pt9po23extw1",
+        space: `${process.env.NEXT_PUBLIC_SPACE_ID}`,
         accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_KEY}`,
     });
 

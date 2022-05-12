@@ -7,7 +7,7 @@ import styles from '../../styles/Recipes.module.scss'
 export async function getStaticProps() {
 
     const client = createClient({
-        space: "pt9po23extw1",
+        space: `${process.env.NEXT_PUBLIC_SPACE_ID}`,
         accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_KEY}`,
     });
 
