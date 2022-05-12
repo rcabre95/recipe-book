@@ -1,0 +1,27 @@
+@mixin hMargins($measure) {
+    margin-left: $measure;
+    margin-right: $measure;
+}
+
+@mixin vMargins($measure) {
+    margin-top: $measure;
+    margin-bottom: $measure;
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+.recipeCard {
+    // height: 300px;
+    height: 18.5rem;
+    width: 250px;
+    background-color: #f7f7f7;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    @include hMargins(1rem);
+    @include vMargins(1.5rem);
+}

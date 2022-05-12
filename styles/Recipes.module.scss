@@ -5,6 +5,50 @@
     flex-direction: $direction;
 }
 
+@mixin hPadding($measure) {
+    padding-left: $measure;
+    padding-right: $measure;
+}
+
 .recipes {
     background-color: brown;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .recipesBody {
+        
+        height: 100%;
+        width: 100%;
+        // background-color: green;
+        display: flex;
+        flex-direction: row;
+
+        .filters {
+            height: 100%;
+            width: 25%;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.5rem;
+
+            fieldset {
+                border: 1px solid blue;
+                border-radius: 12px;
+                height: fit-content;
+                width: 80%;
+            }
+        }
+        .items {
+            height: 100%;
+            overflow: hidden;
+            width: 75%;
+            background-color: rosybrown;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+    }
 }
