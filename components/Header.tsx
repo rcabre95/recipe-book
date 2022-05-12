@@ -21,7 +21,10 @@ class Header extends Component<IHeaderProps, IHeaderState> {
     render() {
         return (
             <div className={styles.header}>
-                HEADER
+                <div className={styles.titleBox}>
+                    <h1 className={styles.title}>GAINED IT MEALS</h1>
+                    <h3 className={styles.subtitle}>Meal Preps for Heavy Reps</h3>
+                </div>
             </div>
         )
     }

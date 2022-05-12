@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import Header from '../components/Header'
 
 interface IHomeProps {
@@ -25,7 +25,7 @@ class Home extends Component<IHomeProps, IHomeState> {
     return (
       <div className={styles.home}>
         <Header />
-        HOME
+        
       </div>
     )
   }
