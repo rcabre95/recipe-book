@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
     const client = createClient({
         space: "pt9po23extw1",
-        accessToken: "019vy6pI4p8QkYn8QdAW0V7EPN6bl6svoQZF2AJHzdU",
+        accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_KEY}`,
     });
 
     const res = await client.getEntries({
