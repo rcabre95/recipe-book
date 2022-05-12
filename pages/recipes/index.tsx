@@ -4,20 +4,6 @@ import Header from '../../components/Header'
 import RecipeCard from '../../components/RecipeCard'
 import styles from '../../styles/Recipes.module.scss'
 
-// export async function getStaticPaths() {
-//     const listings = JSON.parse(fs.readFileSync('public/fakeData/listings.json', "utf-8")).listings;
-//     const listingPaths = listings.map((list) => {
-//         return {
-//             params: { spaceId: list.spaceId }
-//         }
-//     })
-
-//     return {
-//         paths: listingPaths,
-//         fallback: false
-//     }
-// }
-
 export async function getStaticProps() {
 
     const client = createClient({
@@ -51,6 +37,7 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
         this.state = {
 
         }
+        
     }
 
     componentDidMount() {
@@ -70,7 +57,7 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
                     </div>
                     <div className={styles.items}>
                         {this.props.recipes.map((recipe: any) => (
-                            <RecipeCard recipe={recipe.fields} />
+                            <RecipeCard recipe={recipe.fields} key={recipe.fields.slug} />
                         ))}
                     </div>
                 </div>

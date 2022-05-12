@@ -24,4 +24,15 @@
     border-radius: 12px;
     @include hMargins(1rem);
     @include vMargins(1.5rem);
+    overflow: hidden;
+
+    .imageContainer {
+        height: 40%;
+        width: 100%;
+
+        .thumbnail {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
