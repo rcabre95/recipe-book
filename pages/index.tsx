@@ -24,6 +24,9 @@ class Home extends Component<IHomeProps, IHomeState> {
   render() {
     return (
       <div className={styles.home}>
+        <Head>
+          <title>Gained-It Meals</title>
+        </Head>
         <Header />
         
       </div>

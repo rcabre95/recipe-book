@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Head from 'next/head'
 import { createClient } from 'contentful'
 import Header from '../../components/Header'
 import styles from '../../styles/Recipe.module.scss'
@@ -65,6 +66,9 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
     render() {
         return (
             <div className={styles.recipe}>
+                <Head>
+                    <title>{this.props.recipe.title}</title>
+                </Head>
                 <Header />
                 <div className={styles.imageContainer}>
                     <img />

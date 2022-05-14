@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { createClient } from 'contentful'
+import Head from 'next/head'
 import Header from '../../components/Header'
 import RecipeCard from '../../components/RecipeCard'
 import styles from '../../styles/Recipes.module.scss'
@@ -52,6 +53,9 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
     render() {
         return (
             <div className={styles.recipes}>
+                <Head>
+                    <title>Recipes</title>
+                </Head>
                 <Header />
                 <div className={styles.recipesBody}>
                     <div className={styles.filters}>
