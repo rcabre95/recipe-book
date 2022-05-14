@@ -3,6 +3,7 @@ import { createClient } from 'contentful'
 import Header from '../../components/Header'
 import RecipeCard from '../../components/RecipeCard'
 import styles from '../../styles/Recipes.module.scss'
+import { IContentfulData } from '../../interfaces/recipeTyping'
 
 export async function getStaticProps() {
 
@@ -15,15 +16,19 @@ export async function getStaticProps() {
         content_type: 'recipe'
     });
 
+    const recipeFields = res.items.map((item) => {
+        return item.fields
+    })
+
     return {
         props: {
-            recipes: res.items
+            recipes: recipeFields
         }
     }
 }
 
 interface IRecipesProps {
-    recipes: any
+    recipes: IContentfulData[]
 }
 
 interface IRecipesState {
@@ -57,8 +62,10 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
                     </div>
                     <div className={styles.items}>
                         {this.props.recipes.map((recipe: any) => (
-                            <RecipeCard recipe={recipe.fields} key={recipe.fields.slug} />
+                            <RecipeCard recipe={recipe} key={recipe.slug} />
+                            
                         ))}
+                        
                     </div>
                 </div>
             </div>

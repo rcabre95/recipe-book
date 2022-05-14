@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { createClient } from 'contentful'
+import Header from '../../components/Header'
 import styles from '../../styles/Recipe.module.scss'
+import { IContentfulData } from '../../interfaces/recipeTyping';
 
 export async function getStaticPaths() {
     const client = createClient({
@@ -44,7 +46,7 @@ export async function getStaticProps(context: any) {
 }
 
 interface IRecipeProps {
-    recipe: any;
+    recipe: IContentfulData;
 }
 
 interface IRecipeState {
@@ -63,6 +65,10 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
     render() {
         return (
             <div className={styles.recipe}>
+                <Header />
+                <div className={styles.imageContainer}>
+                    <img />
+                </div>
                 {this.props.recipe.title}
             </div>
         )
