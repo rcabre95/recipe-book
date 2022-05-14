@@ -9,4 +9,5 @@ export interface IContentfulData {
     slug: string;
     thumbnail: any;
     title: string;
+    instructions: string[];
 }

@@ -1,0 +1,26 @@
+
+
+.recipe {
+
+    .imageContainer {
+        height: 60vh;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .recipeBody {
+        display: flex;
+        flex-direction: row;
+
+        .gatheredItems {
+            width: 25%;
+        }
+        .mainBody {
+            width: 75%;
+        }
+    }
+}

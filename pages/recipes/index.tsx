@@ -3,6 +3,7 @@ import { createClient } from 'contentful'
 import Head from 'next/head'
 import Header from '../../components/Header'
 import RecipeCard from '../../components/RecipeCard'
+import Footer from '../../components/Footer'
 import styles from '../../styles/Recipes.module.scss'
 import { IContentfulData } from '../../interfaces/recipeTyping'
 
@@ -72,6 +73,7 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
                         
                     </div>
                 </div>
+                {/* <Footer /> */}
             </div>
         )
     }
