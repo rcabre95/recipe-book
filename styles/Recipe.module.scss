@@ -18,6 +18,11 @@
 
         .gatheredItems {
             width: 25%;
+
+            .strike {
+                text-decoration: line-through;
+                transition: 400ms;
+            }
         }
         .mainBody {
             width: 75%;

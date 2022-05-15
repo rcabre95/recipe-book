@@ -53,7 +53,7 @@ interface IRecipeProps {
 }
 
 interface IRecipeState {
-
+    checkedBoxes: string[];
 }
 
 class Recipe extends Component<IRecipeProps, IRecipeState> {
@@ -61,8 +61,25 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
         super(props);
 
         this.state = {
-
+            checkedBoxes: []
         }
+
+        this.handleCheckbox = this.handleCheckbox.bind(this);
+    }
+
+    handleCheckbox(e: any) {
+        const targetID: string = JSON.parse(JSON.stringify(e.target.id));
+        let boxesArray: string[] = JSON.parse(JSON.stringify(this.state.checkedBoxes));
+        const index: number = boxesArray.indexOf(targetID)
+
+        if (index > -1) {
+            boxesArray.splice(index, 1);
+        } else {
+            boxesArray.push(targetID)
+        }
+        this.setState({
+            checkedBoxes: boxesArray
+        }, () => { console.log(this.state.checkedBoxes) })
     }
 
     render() {
@@ -85,9 +102,19 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                                     {this.props.recipe.equipment.map((tool, index) => (
                                         <FormControlLabel
                                             key={index}
-                                            label={tool}
+                                            label={
+                                                <span
+                                                className={`${styles.tool}
+                                                ${this.state.checkedBoxes.indexOf(`tool${index}`) > -1 ?
+                                                styles.strike : null}`}>
+                                                    {tool}
+                                                </span>
+                                            }
                                             control={
-                                                <Checkbox />
+                                                <Checkbox
+                                                    id={`tool${index}`}
+                                                    onChange={this.handleCheckbox}
+                                                />
                                             }
                                         />
                                     ))}
@@ -100,11 +127,14 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                                 <FormGroup>
                                     {this.props.recipe.ingredients.map((spice, index) => (
                                         <FormControlLabel
-                                        key={index}
-                                        label={spice}
-                                        control={
-                                            <Checkbox />
-                                        }
+                                            key={index}
+                                            label={<span className={`${styles.spice} ${this.state.checkedBoxes.indexOf(`ingr${index}`) > -1 ? styles.strike : null}`}>{spice}</span>}
+                                            control={
+                                                <Checkbox
+                                                    id={`ingr${index}`}
+                                                    onChange={this.handleCheckbox}
+                                                />
+                                            }
                                         />
                                     ))}
                                 </FormGroup>
