@@ -143,14 +143,12 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                     </div>
                     <div className={styles.mainBody}>
                         <section className={styles.instructions}>
-                            <h3>Instructions</h3>
-                            
+                            <h3 className={styles.descTit}>Instructions</h3>
                                 <ol>
                                     {this.props.recipe.instructions.map((step, index) => (
-                                    <li key={index}>{step}</li>
+                                    <li key={index} className={styles.ingrLineItem}>{step}</li>
                                     ))}
                                 </ol>
-                            
                         </section>
                     </div>
                 </div>

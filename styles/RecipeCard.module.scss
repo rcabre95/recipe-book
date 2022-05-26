@@ -25,6 +25,13 @@
     @include hMargins(1rem);
     @include vMargins(1.5rem);
     overflow: hidden;
+    transition: 300ms;
+    
+    &:hover {
+        transform: scale(1.05);
+        border: 2px solid skyblue;
+        cursor: pointer;
+    }
 
     .imageContainer {
         height: 40%;
@@ -34,6 +41,22 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+        }
+    }
+    .recipeTitle {
+        margin-left: 3%;
+        font-weight: 500;
+    }
+    .cardDetails {
+        height: 50%;
+        width: 100%;
+        // background-color: green;
+        @include flexCenter(row);
+        justify-content: space-around;
+        .divider {
+            border-left: 1px solid lightgray;
+            width: 1px;
+            height: 30%;
         }
     }
 }

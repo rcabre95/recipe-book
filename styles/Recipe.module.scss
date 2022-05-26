@@ -1,6 +1,11 @@
-
+@mixin hMargins($measure) {
+    margin-left: $measure;
+    margin-right: $measure;
+}
 
 .recipe {
+    height: fit-content;
+    // background-color: green;
 
     .imageContainer {
         height: 60vh;
@@ -12,12 +17,23 @@
             object-fit: cover;
         }
     }
+    .recipeTitle {
+        @include hMargins(15rem);
+        font-size: xx-large;
+        font-weight: 300;
+        // text-decoration: underline;
+        // background-color: green;
+        border-bottom: 4px solid skyblue;
+
+    }
     .recipeBody {
         display: flex;
         flex-direction: row;
+        @include hMargins(15rem);
 
         .gatheredItems {
             width: 25%;
+            margin-right: 2rem;
 
             .strike {
                 text-decoration: line-through;
@@ -26,6 +42,20 @@
         }
         .mainBody {
             width: 75%;
+            font-size: large;
+            .instructions {
+                .descTitle {
+                    // background-color: green;
+                    border-bottom: 2px solid lightgray;
+                }
+                .ingrLineItem {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        fieldset {
+            border: 2px solid lightgray;
+            border-radius: 5px;
         }
     }
 }

@@ -28,13 +28,14 @@
         .filters {
             height: 100%;
             width: 25%;
-            background-color: teal;
+            background-color: #ADD8E6;
+            border-right: 1px solid #53565A;
             display: flex;
             justify-content: center;
             padding-top: 1.5rem;
 
             fieldset {
-                border: 1px solid blue;
+                border: 1px solid #658F9C;
                 border-radius: 12px;
                 height: fit-content;
                 width: 80%;
@@ -44,7 +45,7 @@
             height: 100%;
             overflow: hidden;
             width: 75%;
-            background-color: rosybrown;
+            background-color: #EEC9BC;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;

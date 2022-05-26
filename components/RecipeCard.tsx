@@ -25,19 +25,25 @@ class RecipeCard extends Component<IRecipeCardProps, IRecipeCardState> {
     }
 
     componentDidMount() {
-        // console.log(this.props.recipe.slug)
+        // console.log(this.props.recipe);
     }
 
     render() {
+        const { thumbnail, title, servings, cookingTime } = this.props.recipe
         return (
             <div className={styles.recipeCard} onClick={this.openRecipe}>
                 <div className={styles.imageContainer}>
                     <img
-                        src={`http:${this.props.recipe.thumbnail.fields.file.url}`}
+                        src={`http:${thumbnail.fields.file.url}`}
                         className={styles.thumbnail}
                     />
                 </div>
-                {this.props.recipe.title}
+                <span className={styles.recipeTitle}>{title}</span>
+                <div className={styles.cardDetails}>
+                    <span className={styles.quantitative}>{servings} {servings < 2 ? "Serving" : "Servings"}</span>
+                    <div className={styles.divider}></div>
+                    <span className={styles.quantitative}>{cookingTime} Minutes</span>
+                </div>
             </div>
         )
     }
