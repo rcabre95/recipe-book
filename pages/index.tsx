@@ -53,10 +53,12 @@ class Home extends Component<IHomeProps, IHomeState> {
   }
 
   componentDidMount() {
+    console.log(` array length: ${this.state.recipeURLs.length}`)
     setInterval(() => {
-      this.setState((prevState) => ({
-        urlIndex: prevState.urlIndex === this.state.recipeURLs.length ? 0 : prevState.urlIndex + 1
-      }), () => { console.log(this.state.urlIndex) })
+      let imgIndex = this.state.urlIndex === this.state.recipeURLs.length - 1 ? 0 : this.state.urlIndex + 1
+      this.setState({
+        urlIndex: imgIndex
+      }, () => { console.log(this.state.urlIndex) });
     }, 5000)
   }
 
@@ -69,10 +71,12 @@ class Home extends Component<IHomeProps, IHomeState> {
         <Header />
 
         <div className={styles.homeBody} style={{backgroundImage: `url(${this.state.recipeURLs[this.state.urlIndex]})`}}>
-
+          <div className={styles.mainCard}>
+            <h5>Choose from a number of healthy, delicious, and calorie-dense meals, to help you reach your goals!</h5>
           <Link href="/recipes"><a className={styles.recipeLink}>
             See Recipes!
             </a></Link>
+          </div>
         </div>
         <Footer />
       </div>

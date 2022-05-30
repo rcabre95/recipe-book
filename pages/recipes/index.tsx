@@ -35,7 +35,6 @@ interface IRecipesProps {
 }
 
 interface IRecipesState {
-    // nums: number[]
 }
 
 class Recipes extends Component<IRecipesProps, IRecipesState> {
@@ -43,7 +42,6 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
         super(props);
 
         this.state = {
-            // nums: [0, 1, 1, 2]
         }
         
     }
@@ -73,7 +71,6 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
                             
                         ))}
                         
-                        {/* <button onClick={() => this.stupidBitchEquation(this.state.nums)}></button> */}
                     </div>
                 </div>
                 {/* <Footer /> */}
