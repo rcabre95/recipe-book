@@ -35,7 +35,7 @@ interface IRecipesProps {
 }
 
 interface IRecipesState {
-    nums: number[]
+    // nums: number[]
 }
 
 class Recipes extends Component<IRecipesProps, IRecipesState> {
@@ -43,7 +43,7 @@ class Recipes extends Component<IRecipesProps, IRecipesState> {
         super(props);
 
         this.state = {
-            nums: [0, 1, 1, 2]
+            // nums: [0, 1, 1, 2]
         }
         
     }

@@ -4,7 +4,7 @@ export default function Footer() {
 
     return <div style={{
             width: '100%',
-            marginTop: "20px",
+            // marginTop: "20px",
             backgroundColor: 'darkgray',
             color: 'white',
             textAlign: 'center'

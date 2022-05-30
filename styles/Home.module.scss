@@ -7,14 +7,15 @@
 .home {
   // background-color: #f7f7f7;
   height: 100vh;
-  // background-color: aliceblue;
+  background-color: blue;
   width: 100%;
   display: flex;
   flex-direction: column;
   .homeBody {
     @include flexCenter();
     flex: 1;
-    background: no-repeat center center fixed;
+    background: no-repeat center center ;
+    background-size: cover;
     transition: 300ms;
     .recipeLink {
       border: 1px solid lightgray;
